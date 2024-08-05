@@ -5,14 +5,14 @@ phases:
     commands: 
       - echo installing nodejs...
       - apt-get update
-      - curl -sL https://deb.nodesource.com/setup_18.x | bash -  # Updated to Node.js version 18
+      - curl -sL https://deb.nodesource.com/setup_18.x | bash -  
       - apt-get install -y nodejs
       - echo installing yarn...
       - apt-get update
       - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
       - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-      - apt-get update  # Added update before installing yarn
-      - apt install --no-install-recommends -y yarn  # Added -y to skip prompts
+      - apt-get update  
+      - apt install --no-install-recommends -y yarn
       
   pre_build:
     commands:
@@ -28,5 +28,5 @@ artifacts:
   files:
     - "**/*"
   discard-paths: no
-  base-directory: build
+  base-directory: dist 
 
